@@ -11,4 +11,4 @@
 - управление содержимым страницы через java script (функции: определение и вызов)
 - DOM 
 
-# Ссылка на gh-pages: 
+# Ссылка на gh-pages: https://kirakarushina.github.io/mesto/
