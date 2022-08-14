@@ -1,12 +1,12 @@
 .profile__info-EditButton {
-    background-image: url(/images/karandash.png);
+    background-image: url(../../../images/edit.png);
     width: 24px;
     height: 24px;
-  margin-left: 18px;
-  align-self: center;
-  background-repeat: no-repeat;
-background-position: center;
-border: 1px solid #FFFFFF;
+   margin-left: 18px;
+   align-self: center;
+   background-repeat: no-repeat;
+   background-position: center;
+   border: 1px solid #FFFFFF;
 }
 @media screen and (max-width: 680px) {
   .profile__info-EditButton {
