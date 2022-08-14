@@ -1,0 +1,18 @@
+.profile__info {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 680px) {
+    .profile__info {
+        padding-top: 22px;
+        padding-left: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}

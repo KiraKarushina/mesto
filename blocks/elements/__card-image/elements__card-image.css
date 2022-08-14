@@ -1,0 +1,6 @@
+.elements__card-image {
+        width: 282px;
+        height: 282px;
+        grid-area: image;
+        border-radius: 5px 5px 0px 0px;
+}
