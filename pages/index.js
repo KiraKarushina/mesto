@@ -1,32 +1,31 @@
 //Buttons
-let profileEditButton = document.querySelector(".profile__info-EditButton");
-let profileCloseButton = document.querySelector(".popup__close");
+const profileEditButton = document.querySelector(".profile__info-EditButton");
+const profileCloseButton = document.querySelector(".popup__close");
 
 //Profile Popup
-let profilePopup = document.querySelector("#profile");
-let nameInputElement = profilePopup.querySelector(".popup__name");
-let jobInputElement = profilePopup.querySelector(".popup__text");
-let profileFormElement = profilePopup.querySelector(".popup__content");
+const profilePopup = document.querySelector("#profile");
+const nameInputElement = profilePopup.querySelector(".popup__name");
+const jobInputElement = profilePopup.querySelector(".popup__text");
+const profileFormElement = profilePopup.querySelector(".popup__content");
 
 //Profile Selector
-let profileInfoName = document.querySelector(".profile__info-name");
-let profileInfoJob = document.querySelector(".profile__info-job");
+const profileInfoName = document.querySelector(".profile__info-name");
+const profileInfoJob = document.querySelector(".profile__info-job");
 
-profileEditButton.addEventListener("click", () => { 
-    openPopup(profilePopup);
-    fillProfilePopup()
-});
-profileCloseButton.addEventListener("click", () => {
-closePopup (profilePopup);
-});
+
+profileEditButton.addEventListener("click", openProfilePopup);
+profileCloseButton.addEventListener("click", closeProfilePopup);
 profileFormElement.addEventListener("submit", formSubmitHandler);
 
-function openPopup (element) {
-    element.classList.add("popup__opened")
+function openProfilePopup () {
+    profilePopup.classList.add("popup__opened");
+    fillProfilePopup();
 }
-function closePopup (element) {
-    element.classList.remove("popup__opened")
+
+function closeProfilePopup () {
+    profilePopup.classList.remove("popup__opened");
 }
+
 function formSubmitHandler (evt) {
     evt.preventDefault();
 
@@ -35,8 +34,7 @@ function formSubmitHandler (evt) {
 
     profileInfoName.textContent = nameInput;
     profileInfoJob.textContent = jobInput;
-
-    closePopup (profilePopup);
+    closeProfilePopup();
 }
 
 function fillProfilePopup() {

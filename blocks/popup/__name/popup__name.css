@@ -1,4 +1,5 @@
 .popup__name {
+    max-width: 358px;
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
@@ -7,5 +8,12 @@
     color: #000000;
     border: none;
     outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 13px;
   }
-  
+
+  @media screen and (max-width: 680px) {
+    .popup__name {
+      max-width: 238px;
+    }
+  }

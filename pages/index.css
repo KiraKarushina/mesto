@@ -4,7 +4,6 @@
 @import url(../blocks/page/page.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
-@import url(../blocks/header/__line/header__line.css);
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__image/profile__image.css);
 @import url(../blocks/profile/__info/profile__info.css);
@@ -31,4 +30,3 @@
 @import url(../blocks/popup/__text/popup__text.css);
 @import url(../blocks/popup/__submit/popup__submit.css);
 @import url(../blocks/popup/__opened/popup__opened.css);
-@import url(../blocks/popup/__underline/popup__underline.css);

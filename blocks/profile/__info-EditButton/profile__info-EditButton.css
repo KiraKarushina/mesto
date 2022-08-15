@@ -1,13 +1,19 @@
 .profile__info-EditButton {
-    background-image: url(../../../images/edit.png);
+    background-image: url(../../../images/edit.svg);
     width: 24px;
     height: 24px;
-   margin-left: 18px;
-   align-self: center;
-   background-repeat: no-repeat;
-   background-position: center;
-   border: 1px solid #FFFFFF;
+    margin-left: 18px;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #FFFFFF;
+    background-color: #000000;
+    transition: opacity 0.5s ease;
 }
+.profile__info-EditButton:hover {
+  opacity: 0.6;
+}
+
 @media screen and (max-width: 680px) {
   .profile__info-EditButton {
     width: 18px;

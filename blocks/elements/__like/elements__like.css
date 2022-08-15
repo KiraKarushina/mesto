@@ -1,5 +1,5 @@
 .elements__like {
-   background-image: url(../../../images/like.png);
+   background-image: url(../../../images/like.svg);
    background-color: transparent;
    border: none;
    background-repeat: no-repeat;
@@ -16,5 +16,5 @@
 opacity: 0.5;
 }
 .elements__like:active {
-    background-image: url(/images/blacklike.png);
+    background-image: url(../../../images/blacklike.svg);
 }
