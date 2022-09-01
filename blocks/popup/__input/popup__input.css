@@ -1,6 +1,6 @@
-.popup__name {
-    max-width: 358px;
-    font-family: "Inter";
+.popup__input {
+    /* max-width: 358px; */
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -8,12 +8,7 @@
     color: #000000;
     border: none;
     outline: none;
+    /* padding-top: 30px; */
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    padding-bottom: 13px;
-  }
-
-  @media screen and (max-width: 680px) {
-    .popup__name {
-      max-width: 238px;
-    }
+    /* padding-bottom: 13px; */
   }

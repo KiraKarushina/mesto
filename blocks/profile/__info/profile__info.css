@@ -1,15 +1,19 @@
 .profile__info {
-    padding-left: 30px;
+    padding: 0 30px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+@media screen and (max-width: 986px) {
+    .profile__info {
+        align-items: center;
+        padding-top: 15px;
+    }
 }
 
 @media screen and (max-width: 680px) {
     .profile__info {
-        padding-top: 22px;
-        padding-left: 0;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
+        padding: 22px 0 0;
     }
 }

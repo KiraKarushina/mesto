@@ -15,6 +15,3 @@
 .elements__like:hover {
 opacity: 0.5;
 }
-.elements__like:active {
-    background-image: url(../../../images/blacklike.svg);
-}

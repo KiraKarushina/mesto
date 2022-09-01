@@ -1,0 +1,4 @@
+.popup__content-name {
+    display: flex;
+    flex-direction: column;
+  }
