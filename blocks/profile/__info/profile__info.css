@@ -5,15 +5,22 @@
     justify-content: center;
 }
 
-@media screen and (max-width: 986px) {
+@media screen and (max-width: 1075px) and (min-width: 986px) {
     .profile__info {
         align-items: center;
         padding-top: 15px;
     }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 985px) and (min-width: 679px) {
+    .profile__info {
+        padding-top: 20px;
+        align-items: center;
+    }
+}
+
+/* @media screen and (max-width: 680px) {
     .profile__info {
         padding: 22px 0 0;
     }
-}
+} */

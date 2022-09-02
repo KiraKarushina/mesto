@@ -2,7 +2,7 @@
 display: grid;
 grid-template-columns: repeat(3, minmax(min-content, max-content));
 gap: 17px;
-margin: auto;
+margin: 0 auto;
 padding-top: 51px;
 padding-left: 0;
 width: max-content;

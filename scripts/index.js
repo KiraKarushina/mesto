@@ -4,8 +4,8 @@ const profileCloseButton = document.querySelector(".popup__close");
 
 //Profile Popup
 const profilePopup = document.querySelector("#profile");
-const nameInputElement = profilePopup.querySelector(".popup__input_name");
-const jobInputElement = profilePopup.querySelector(".popup__input_text");
+const nameInputElement = profilePopup.querySelector(".popup__input_type_author");
+const jobInputElement = profilePopup.querySelector(".popup__input_type_job");
 const profileFormElement = profilePopup.querySelector(".popup__content-name");
 
 //Profile Selector

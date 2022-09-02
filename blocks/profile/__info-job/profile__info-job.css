@@ -20,13 +20,10 @@
 
 @media screen and (max-width: 680px) {
     .profile__info-job {
-    padding-top: 14px;
+    padding-top: 8px;
     max-width: 282px;
     font-size: 14px;
     line-height: 17px;
     align-self: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
     }
 }

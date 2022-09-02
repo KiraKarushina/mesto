@@ -3,7 +3,7 @@
     font-style:  normal;
     font-weight: 400;
     font-display: swap;
-    src: local('inter-regular'),
+    src: local('inter-regular.woff2'),
     url(inter-regular.woff2) format("woff2"),
     url(inter-regular.woff) format("woff");
 }
@@ -12,7 +12,7 @@
     font-style:  normal;
     font-weight: 500;
     font-display: swap;
-    src: local('inter-medium'),
+    src: local('inter-medium.woff2'),
     url(inter-medium.woff2) format("woff2"),
     url(inter-bold.woff) format("woff");
 }
@@ -22,7 +22,7 @@
     font-style:  normal;
     font-display: swap;
     font-weight: 900;
-    src: local('inter-black'),
+    src: local('inter-black.woff2'),
     url(inter-black.woff2) format("woff2"),
     url(inter-black.woff) format("woff");
 }

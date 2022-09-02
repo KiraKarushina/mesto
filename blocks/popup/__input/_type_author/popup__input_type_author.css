@@ -1,11 +1,10 @@
-.popup__input_name {
+.popup__input_type_author {
     max-width: 358px;
-    padding-bottom: 13px;
-    height: 14px;
+    padding: 0px 0px 9px 0px;
   }
 
   @media screen and (max-width: 680px) {
-    .popup__input_name {
+    .popup__input_type_author {
       max-width: 238px;
     }
   }
