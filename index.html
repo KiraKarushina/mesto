@@ -22,12 +22,12 @@
                 <div class="profile__info">
                     <div class="profile__info-title">
                         <h1 class="profile__info-name">Жак-Ив Кусто</h1>
-                        <button type="button" class="profile__info-editbutton"></button>
+                        <button type="button" class="profile__info-edit"></button>
                     </div>
                     <p class="profile__info-job">Исследователь океана</p>
                 </div>
 
-                <button type="button" class="profile__addbutton"></button>
+                <button type="button" class="profile__add"></button>
 
             </section>
 
@@ -88,17 +88,17 @@
 
     <div class="popup" id="profile">
         <div class="popup__container">
-                <button type="button" class="popup__close"></button>
-                <h1 class="popup__title">Редактировать профиль</h1>
-                <form class="popup__content-name" name="popup__content-name">
-                    <input type="text" class="popup__input popup__input_type_author" name="popup__input_name">
-                    <input type="text" class="popup__input popup__input_type_job" name="popup__input_job">
-                    <button type="submit" class="popup__submit">Сохранить</button>
-                </form>
+            <button type="button" class="popup__close"></button>
+            <h1 class="popup__title">Редактировать профиль</h1>
+            <form class="popup__content-name" name="popup__content-name">
+                <input type="text" name="popup__input_name" class="popup__input popup__input_type_author">
+                <input type="text" name="popup__input_name" class="popup__input popup__input_type_job">
+                <button type="submit" class="popup__submit">Сохранить</button>
+            </form>
         </div>
 
     </div>
     <script src="./scripts/index.js"></script>
-</body> 
+</body>
 
 </html>

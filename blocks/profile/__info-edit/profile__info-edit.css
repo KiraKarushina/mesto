@@ -1,4 +1,4 @@
-.profile__info-editbutton {
+.profile__info-edit {
     background-image: url(../../../images/edit.svg);
     background-size: 10px;
     width: 24px;
@@ -12,12 +12,12 @@
     background-color: transparent;
     transition: opacity 0.5s ease;
 }
-.profile__info-editbutton:hover {
+.profile__info-edit:hover {
   opacity: 0.6;
 }
 
 @media screen and (max-width: 680px) {
-  .profile__info-editbutton {
+  .profile__info-edit {
     background-size: 7.5px;
     width: 18px;
     height: 18px;

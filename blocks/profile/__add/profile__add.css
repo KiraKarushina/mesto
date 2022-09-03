@@ -1,8 +1,8 @@
-.profile__addbutton {
+.profile__add {
     background-image: url(../../../images/add.svg);
     background-size: 22px;
     border: 2px solid #FFFFFF;
-    background-color: rgba(0,0,0);
+    background-color: transparent;
     border-radius: 2px;
     background-repeat: no-repeat;
     background-position: center;
@@ -12,20 +12,19 @@
     margin-left: auto;
     transition: opacity 0.5s ease;
 }
-.profile__addbutton:hover {
+.profile__add:hover {
   opacity: 0.6;
 }
 
-@media screen and (max-width: 1075px) and (min-width: 680px) {
-    .profile__addbutton {
+@media screen and (max-width: 1075px) {
+    .profile__add {
         width: 282px;
         margin-top: 30px;
     }
 }
 @media screen and (max-width: 678px) {
-    .profile__addbutton {
+    .profile__add {
         background-size: 16px;
         margin: 36px auto 0;
-        width: 282px;
     }
 }
