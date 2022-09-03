@@ -1,16 +1,16 @@
 .profile__info-edit {
-    background-image: url(../../../images/edit.svg);
-    background-size: 10px;
-    width: 24px;
-    height: 24px;
-    margin-left: 18px;
-    align-self: center;
-    cursor: pointer;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 1px solid #FFFFFF;
-    background-color: transparent;
-    transition: opacity 0.5s ease;
+  background-image: url(../../../images/edit.svg);
+  background-size: 10px;
+  width: 24px;
+  height: 24px;
+  margin-left: 18px;
+  align-self: center;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  transition: opacity 0.5s ease;
 }
 .profile__info-edit:hover {
   opacity: 0.6;
@@ -21,7 +21,7 @@
     background-size: 7.5px;
     width: 18px;
     height: 18px;
-  margin-left: 10px;
-  margin-top: 25px;
+    margin-left: 10px;
+    margin-top: 25px;
   }
 }

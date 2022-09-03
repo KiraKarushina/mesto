@@ -1,19 +1,19 @@
 .profile__info {
-    padding: 0 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1075px) {
-    .profile__info {
-        align-items: center;
-        padding-top: 15px;  
-    }
+  .profile__info {
+    align-items: center;
+    padding-top: 15px;
+  }
 }
 
 @media screen and (max-width: 985px) {
-    .profile__info {
-        padding: 20px 0 0;
-    }
+  .profile__info {
+    padding-top: 0;
+  }
 }

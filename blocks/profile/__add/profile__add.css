@@ -1,30 +1,30 @@
 .profile__add {
-    background-image: url(../../../images/add.svg);
-    background-size: 22px;
-    border: 2px solid #FFFFFF;
-    background-color: transparent;
-    border-radius: 2px;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-width: 150px;
-    height: 50px;
-    cursor: pointer;
-    margin-left: auto;
-    transition: opacity 0.5s ease;
+  background-image: url(../../../images/add.svg);
+  background-size: 22px;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 150px;
+  height: 50px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: opacity 0.5s ease;
 }
 .profile__add:hover {
   opacity: 0.6;
 }
 
 @media screen and (max-width: 1075px) {
-    .profile__add {
-        width: 282px;
-        margin-top: 30px;
-    }
+  .profile__add {
+    width: 282px;
+    margin: 30px 0 0;
+  }
 }
 @media screen and (max-width: 678px) {
-    .profile__add {
-        background-size: 16px;
-        margin: 36px auto 0;
-    }
+  .profile__add {
+    background-size: 16px;
+    margin: 36px 0 0;
+  }
 }
