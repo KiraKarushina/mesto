@@ -27,57 +27,22 @@
                     <p class="profile__info-job">Исследователь океана</p>
                 </div>
 
-                <button type="button" class="profile__add"></button>
+                <button id="addCardButton" type="button" class="profile__add"></button>
 
             </section>
 
-            <section class="elements">
-                <ul class="elements__block">
+            <section id="cards" class="elements__block">
+                <template id="cardTemplate">
                     <li class="elements__card">
-                        <img class="elements__card-image" src="./images/altay.jpg" alt="Алтай" />
+                        <button class="elements__delete"></button>
+                        <img class="elements__card-image" />
                         <div class="elements__group">
-                            <h2 class="elements__card-text">Алтай</h2>
-                            <button type="button" class="elements__like elements__like_active"></button>
+                            <h2 class="elements__card-text"></h2>
+                            <button type="button" class="elements__like"></button>
                         </div>
                     </li>
-                    <li class="elements__card">
-                        <img class="elements__card-image" src="./images/baikal.jpg" alt="Байкал" />
-                        <div class="elements__group">
-                            <h2 class="elements__card-text">Байкал</h2>
-                            <button type="button" class="elements__like elements__like_active"></button>
-                        </div>
-                    </li>
-                    <li class="elements__card">
-                        <img class="elements__card-image" src="./images/baltiiskoemore.jpg" alt="Балтийское море" />
-                        <div class="elements__group">
-                            <h2 class="elements__card-text">Балтийское море</h2>
-                            <button type="button" class="elements__like elements__like_active"></button>
-                        </div>
-                    </li>
-                    <li class="elements__card">
-                        <img class="elements__card-image" src="./images/adigeya.jpg" alt="Адыгея" />
-                        <div class="elements__group">
-                            <h2 class="elements__card-text">Адыгея</h2>
-                            <button type="button" class="elements__like elements__like_active"></button>
-                        </div>
-                    </li>
-                    <li class="elements__card">
-                        <img class="elements__card-image" src="./images/krasnayapolyana.jpg" alt="Красная Поляна" />
-                        <div class="elements__group">
-                            <h2 class="elements__card-text">Красная Поляна</h2>
-                            <button type="button" class="elements__like elements__like_active"></button>
-                        </div>
-                    </li>
-                    <li class="elements__card">
-                        <img class="elements__card-image" src="./images/uralskiegori.jpg" alt="Уральские горы" />
-                        <div class="elements__group">
-                            <h2 class="elements__card-text">Уральские горы</h2>
-                            <button type="button" class="elements__like elements__like_active"></button>
-                        </div>
-                    </li>
-                </ul>
+                </template>
             </section>
-
         </main>
 
         <footer class="footer">
@@ -92,12 +57,34 @@
             <h3 class="popup__title">Редактировать профиль</h3>
             <form class="popup__content-name" name="popup__content-name">
                 <input type="text" name="popup__input_name" class="popup__input popup__input_type_author">
-                <input type="text" name="popup__input_name" class="popup__input popup__input_type_job">
+                <input type="text" name="popup__input_job" class="popup__input popup__input_type_job">
                 <button type="submit" class="popup__submit">Сохранить</button>
             </form>
         </div>
-
     </div>
+
+    <div class="popup" id="addCardPopup">
+        <div class="popup__container">
+            <button id="addCardPopupCloseButton" type="button" class="popup__close"></button>
+            <h3 class="popup__title">Новое место</h3>
+            <form id="addCardForm" name="popup__content-name" class="popup__content-name">
+                <input id="addCardInputName" name="name" type="text" placeholder="Название"
+                    class="popup__input popup__input_type_author" />
+                <input id="addCardInputLink" name="link" type="text" placeholder="Ссылка на картинку"
+                    class="popup__input popup__input_type_job" />
+                <button type="submit" class="popup__submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup" id="previewPopup">
+        <div class="popup__preview-container">
+            <button id="popupPictureClose" type="button" class="popup__close"></button>
+            <img id="previewImage" class="popup__preview-image" />
+            <h3 id="previewDescription" class="popup__preview-title"></h3>
+        </div>
+    </div>
+
     <script src="./scripts/index.js"></script>
 </body>
 
