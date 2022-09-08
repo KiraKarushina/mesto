@@ -3,5 +3,5 @@
 }
 
 .elements__like_active:hover {
-  background-image: url(../../../../images/hover-heart.svg);
+  opacity: 0.5;
 }
