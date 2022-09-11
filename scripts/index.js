@@ -1,3 +1,7 @@
+// imports
+import * as validate from './validate.js';
+
+
 //Buttons
 const profileEditButton = document.querySelector(".profile__info-edit");
 const profileCloseButton = document.querySelector(".popup__close");
@@ -27,7 +31,11 @@ const inputNameElementAddCard = document.querySelector('#addCardInputName');
 const inputLinkElementAddCard = document.querySelector('#addCardInputLink');
 const cardTemplate = document.querySelector('#cardTemplate').content;
 
+//Forms
+const forms = document.forms;
 
+
+// Обработчики событий
 
 profileEditButton.addEventListener("click", openProfilePopup);
 profileCloseButton.addEventListener("click", () => {closePopup(profilePopup)});
@@ -70,11 +78,35 @@ const defaultCards = [
 
 function openPopup(htmlPopupElement) {
     htmlPopupElement.classList.add("popup_opened");
+
+    document.addEventListener("click", popupClickOutsideHandler);
+    document.addEventListener("keydown", popupEscapePressedHandler);
 }
 
 function closePopup(htmlPopupElement) {
     htmlPopupElement.classList.remove("popup_opened");
+    document.removeEventListener("mousedown", popupClickOutsideHandler);
+    document.removeEventListener("keydown", popupEscapePressedHandler);
+    resetForms();
 }
+
+function popupClickOutsideHandler(evt) {
+        if(evt.target.classList.contains('popup_opened')) {
+            closePopup(evt.target);
+        }
+}
+
+function popupEscapePressedHandler(evt) {
+        if(evt.key === 'Escape') {
+            const popup = document.querySelector('.popup_opened');
+            closePopup(popup);
+        }
+}
+
+function resetForms() {
+    Array.from(forms).forEach(form => form.reset());
+}
+
 
 // Profile popup methods
 
@@ -155,4 +187,7 @@ function createCard(name, link) {
 defaultCards.forEach((card)=> {
     renderCard(card.name, card.link);
 })
+
+fillProfilePopup();
+validate.enableValidation();
 
