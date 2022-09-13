@@ -58,10 +58,10 @@
             <form class="form popup__content-name" name="popup__content-name">
                 <input id="author-input" type="text" name="popup__input_name"
                     class="popup__input popup__input_type_author" minlength="2" maxlength="40" required>
-                <span class="form__input-error author-input-error"></span>
+                <span class="form__error author-input-error"></span>
                 <input id="job-input" type="text" name="popup__input_job" class="popup__input popup__input_type_job"
                     minlength="2" maxlength="200" required>
-                <span class="form__input-error job-input-error"></span>
+                <span class="form__error job-input-error"></span>
                 <button type="submit" class="popup__submit">Сохранить</button>
             </form>
         </div>
@@ -74,16 +74,16 @@
             <form id="addCardForm" name="popup__content-name" class="form popup__content-name">
                 <input id="addCardInputName" name="name" type="text" placeholder="Название"
                     class="popup__input popup__input_type_author" minlength="2" maxlength="40" required />
-                <span class="form__input-error addCardInputName-error"></span>
+                <span class="form__error addCardInputName-error"></span>
                 <input id="addCardInputLink" name="link" placeholder="Ссылка на картинку"
                     class="popup__input popup__input_type_job" type="url" required />
-                <span class="form__input-error addCardInputLink-error"></span>
-                <button type="submit" class="popup__submit">Сохранить</button>
+                <span class="form__error addCardInputLink-error"></span>
+                <button type="submit" class="popup__submit">Создать</button>
             </form>
         </div>
     </div>
 
-    <div class="popup" id="previewPopup">
+    <div class="popup popup__preview" id="previewPopup">
         <div class="popup__preview-container">
             <button id="popupPictureClose" type="button" class="popup__close"></button>
             <img id="previewImage" class="popup__preview-image" />

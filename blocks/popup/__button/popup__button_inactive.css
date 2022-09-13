@@ -9,4 +9,9 @@
   font-size: 18px;
   line-height: 22px;
   text-align: center;
+  cursor: default;
+}
+
+.popup__button_inactive:hover {
+  opacity: 1;
 }
