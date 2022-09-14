@@ -45,7 +45,6 @@ const selectors = {
   submitButtonSelector: '.popup__submit',
   inactiveButtonClass: 'popup__button_inactive',
   inputErrorClass: 'popup__input_type_error',
-  errorClass: 'form__error_active'
 }
 
 // Список карточек по умолчанию.
@@ -133,7 +132,6 @@ function handleFormSubmit (evt) {
     profileInfoName.textContent = nameInput;
     profileInfoJob.textContent = jobInput;
     closePopup(profilePopup);
-    resetForm(profilePopup);
 }
 
 function addCardFormSubmitHandler(evt) {
@@ -141,8 +139,6 @@ function addCardFormSubmitHandler(evt) {
 
     renderCard(inputNameElementAddCard.value, inputLinkElementAddCard.value, true);
     closePopup(popupAddCard);
-    inputNameElementAddCard.value = '';
-    inputLinkElementAddCard.value = '';
     resetForm(popupAddCard);
 }
 
