@@ -1,11 +1,4 @@
 .popup__preview-image {
-    max-width: 75vw;
-    max-height: 75vh;
-}
-
-@media screen and (max-width: 680px) {
-    .popup__preview-image {
-        max-width: 350px;
-        max-height: 400px;
-    }
+  max-width: 75vw;
+  max-height: 75vh;
 }
