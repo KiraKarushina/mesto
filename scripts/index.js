@@ -49,6 +49,9 @@ const selectors = {
   inputErrorClass: 'popup__input_type_error',
 }
 
+// Все валидаторы форм в одном месте
+const formValidators = {};
+
 // Список карточек по умолчанию.
 const defaultCards = [
     {
@@ -81,7 +84,6 @@ const defaultCards = [
 
 function openPopup(htmlPopupElement) {
     htmlPopupElement.classList.add("popup_opened");
-
     htmlPopupElement.addEventListener("mousedown", handleClickOutsidePopup);
     document.addEventListener("keydown", handleEscapePressPopup);
 }   
@@ -105,14 +107,6 @@ function handleEscapePressPopup(evt) {
         }
 }
 
-function resetForm(element) {
-    const currentForm = element.querySelector('.form');
-     if (currentForm) {
-        currentForm.reset();
-    }
-}
-
-
 // Profile popup methods
 
 function openProfilePopup () {
@@ -125,7 +119,7 @@ function fillProfilePopup() {
     jobInputElement.value = profileInfoJob.textContent;
 }
 
-function handleFormSubmit (evt) {
+function handleFormSubmit(evt) {
     evt.preventDefault();
 
     const nameInput = nameInputElement.value;
@@ -141,48 +135,54 @@ function addCardFormSubmitHandler(evt) {
 
     renderCard({name: inputNameElementAddCard.value, link: inputLinkElementAddCard.value}, true);
     closePopup(popupAddCard);
-    resetForm(popupAddCard);
+    evt.target.reset()
+    formValidators['popup__content-card'].resetValidation();
 }
 
 function renderCard(item, prepend = false) {
-    const card = new Card(item, '#cardTemplate');
-    const cardElement = card.generateCard();
-    setListenerOnImage(cardElement);
-        if (prepend) {
-            cardsContainer.prepend(cardElement);
-        } else {
-            cardsContainer.append(cardElement);
-        }
+    const cardElement = createCard(item);
+    if (prepend) {
+        cardsContainer.prepend(cardElement);
+    } else {
+        cardsContainer.append(cardElement);
+    }
 }
 
-function openAddCardPopup () {
+function createCard(item) {
+    const card = new Card(item, '#cardTemplate', handleCardClick);
+    const cardElement = card.generateCard();
+    return cardElement
+}
+
+
+function openAddCardPopup() {
     openPopup(popupAddCard);
 }
 
-function setValidationsOnAllForms() {
-    const formList = Array.from(document.querySelectorAll(selectors.formSelector));
-    formList.forEach((form) => {
-        const formValidator = new FormValidator(selectors, form);
-        formValidator.enableValidation();
+
+function enableValidation(config) {
+    const formList = Array.from(document.querySelectorAll(config.formSelector))
+    formList.forEach((formElement) => {
+        const validator = new FormValidator(config, formElement);
+        const formName = formElement.getAttribute('name')
+        formValidators[formName] = validator;
+        validator.enableValidation();
     });
+};
+
+function handleCardClick(name, link) {
+    this._cardImage.alt = name;
+    this._cardImage.src = link;
+    picture.src = link;
+    picture.alt = name;
+    pictureDescriptionPopup.innerText = name;
+    openPopup(picturePopup);
 }
 
-function setListenerOnImage(cardElement) {
-    const image = cardElement.querySelector('img');
-    image.addEventListener('click', (event) => {
-        const clickedPicture = event.target;
-        picture.src = clickedPicture.src;
-        picture.alt = image.alt;
-        pictureDescriptionPopup.innerText = clickedPicture.alt;
-        openPopup(picturePopup);
-    });
-}
 
-
-defaultCards.forEach((card)=> {
+defaultCards.forEach((card) => {
     renderCard(card);
 })
 
 fillProfilePopup();
-setValidationsOnAllForms()
-
+enableValidation(selectors);
