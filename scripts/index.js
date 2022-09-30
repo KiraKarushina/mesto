@@ -95,18 +95,29 @@ function closePopup(htmlPopupElement) {
 }
 
 function handleClickOutsidePopup(evt) {
-    if (evt.target.classList.contains('popup_opened') || evt.target.classList.contains('popup__close')) { 
-      closePopup(evt.currentTarget); 
-    }; 
+    if (evt.target.classList.contains('popup_opened') || evt.target.classList.contains('popup__close')) {
+        closePopup(evt.currentTarget);
+        resetFormAndValidation(evt.currentTarget);
+    }
 }
 
 function handleEscapePressPopup(evt) {
-        if(evt.key === 'Escape') {
-            const popup = document.querySelector('.popup_opened');
-            closePopup(popup);
-        }
+    if (evt.key === 'Escape') {
+        const popup = document.querySelector('.popup_opened');
+        closePopup(popup);
+        resetFormAndValidation(popup);
+    }
 }
 
+
+function resetFormAndValidation(htmlElement) {
+    if (htmlElement.querySelector('.form')) {
+        const form = htmlElement.querySelector('.form');
+        const formName = form.getAttribute('name')
+        formValidators[formName].resetValidation();
+        form.reset();
+    }
+}
 // Profile popup methods
 
 function openProfilePopup () {
@@ -138,7 +149,7 @@ function addCardFormSubmitHandler(evt) {
     evt.target.reset()
     formValidators['popup__content-card'].resetValidation();
 }
-
+ 
 function renderCard(item, prepend = false) {
     const cardElement = createCard(item);
     if (prepend) {
