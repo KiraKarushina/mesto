@@ -1,4 +1,5 @@
 // imports
+import '../pages/index.css'
 import Card  from './Card.js';
 import FormValidator  from './FormValidator.js';
 import PopupWithForm from './PopupWithForm.js';
@@ -15,23 +16,21 @@ const buttonAddCard = document.querySelector('#addCardButton');
 const profilePopup = document.querySelector("#profile");
 const nameInputElement = profilePopup.querySelector(".popup__input_type_author");
 const jobInputElement = profilePopup.querySelector(".popup__input_type_job");
-const profileFormElement = profilePopup.querySelector(".popup__content-name");
 //Profile Selector
 const profileInfoName = document.querySelector(".profile__info-name");
 const profileInfoJob = document.querySelector(".profile__info-job");
 
 //Picture Popup
 const picturePopup = document.querySelector('#previewPopup');
-const picture = picturePopup.querySelector('#previewImage');
-const pictureDescriptionPopup = document.querySelector('#previewDescription');
 
-//Cards
-// const cardsContainer = document.querySelector('#cards');
-const popupAddCard = document.querySelector('#addCardPopup');
-const formElementAddCard = document.querySelector('#addCardForm');
-const inputNameElementAddCard = document.querySelector('#addCardInputName');
-const inputLinkElementAddCard = document.querySelector('#addCardInputLink');
-const cardTemplate = document.querySelector('#cardTemplate').content;
+// картинки для webpack
+const altay = new URL('../images/altay.jpg', import.meta.url);
+const baikal = new URL('../images/baikal.jpg', import.meta.url);
+const baltiiskoemore = new URL('../images/baltiiskoemore.jpg', import.meta.url)
+const adigeya = new URL('../images/adigeya.jpg', import.meta.url);
+const krasnayapolyana = new URL('../images/krasnayapolyana.jpg', import.meta.url);
+const uralskiegori = new URL('../images/uralskiegori.jpg', import.meta.url)
+
 
 //Объект с названиями селекторов необходимых для валидации
 
@@ -50,27 +49,27 @@ const formValidators = {};
 const defaultCards = [
     {
         name: 'Алтай',
-        link: './images/altay.jpg'
+        link: altay
     },
     {
         name: 'Байкал',
-        link: './images/baikal.jpg'
+        link: baikal
     },
     {
         name: 'Балтийское море',
-        link: './images/baltiiskoemore.jpg'
+        link: baltiiskoemore
     },
     {
         name: 'Адыгея',
-        link: './images/adigeya.jpg'
+        link: adigeya
     },
     {
         name: 'Красная Поляна',
-        link: './images/krasnayapolyana.jpg'
+        link: krasnayapolyana
     },
     {
         name: 'Уральские горы',
-        link: './images/uralskiegori.jpg'
+        link: uralskiegori
     }
 ];
 

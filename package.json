@@ -1,0 +1,25 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "**Описание проекта и его функциональности**",
+  "main": "scripts/index.js",
+"scripts": {
+  "build": "webpack --mode production",
+  "dev": "webpack serve"
+}, 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiraKarushina/mesto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KiraKarushina/mesto/issues"
+  },
+  "homepage": "https://github.com/KiraKarushina/mesto#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
