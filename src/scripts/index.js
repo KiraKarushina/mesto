@@ -2,6 +2,7 @@
 import '../pages/index.css'
 import Card  from './Card.js';
 import FormValidator  from './FormValidator.js';
+import Popup from './Popup';
 import PopupWithForm from './PopupWithForm.js';
 import PopupWithImage from './PopupWithImage.js';
 import Section  from './Section.js';
@@ -99,6 +100,8 @@ const popupWithProfileForm = new PopupWithForm('#profile',
      profileInfoJob.textContent = data.popup__input_job;
 })
 
+debugger;
+
 // экземпляр с попапом формы карты
 
 const popupWithCardForm = new PopupWithForm('#addCardPopup',
@@ -110,7 +113,7 @@ const popupWithCardForm = new PopupWithForm('#addCardPopup',
 
 // экземпляр с попопам preview картинки
 
-const popupWithImage = new PopupWithImage('#previewPopup')
+const popupWithImage = new PopupWithImage('#previewPopup');
 
 // Обработчики событий на кнопки
 
