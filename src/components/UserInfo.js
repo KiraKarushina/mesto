@@ -12,7 +12,7 @@ export default class UserInfo {
         }
     }
 
-    setUserInfo(name, job){
+    setUserInfo(name, job) {
         this._name = name;
         this._job = job;
     }
