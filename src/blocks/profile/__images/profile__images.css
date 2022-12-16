@@ -1,0 +1,5 @@
+.profile__images:hover {
+  background-image: url("../../../images/Vector.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
