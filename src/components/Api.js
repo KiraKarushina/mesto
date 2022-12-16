@@ -3,7 +3,12 @@ export class Api {
     (this._userID = userID), (this._group = group), (this._url = url);
   }
 
-  //'https://mesto.nomoreparties.co/v1/cohort-55/cards'
+  _getResponseData(res) {
+    if (!res.ok) {
+      return Promise.reject(`Ошибка: ${res.status}`);
+    }
+    return res.json();
+  }
 
   getCards() {
     return fetch(`${this._url}/${this._group}/cards`, {
@@ -11,11 +16,7 @@ export class Api {
         authorization: this._userID,
       },
     }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
+      return this._getResponseData(response);
     });
   }
 
@@ -25,11 +26,7 @@ export class Api {
         authorization: this._userID,
       },
     }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
+      return this._getResponseData(response);
     });
   }
 
@@ -45,11 +42,7 @@ export class Api {
         about: about,
       }),
     }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
+      return this._getResponseData(response);
     });
   }
 
@@ -65,11 +58,7 @@ export class Api {
         link: link,
       }),
     }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
+      return this._getResponseData(response);
     });
   }
 
@@ -80,11 +69,7 @@ export class Api {
         authorization: this._userID,
       },
     }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
+      return this._getResponseData(response);
     });
   }
 
@@ -95,11 +80,7 @@ export class Api {
         authorization: this._userID,
       },
     }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
+      return this._getResponseData(response);
     });
   }
 
@@ -110,11 +91,7 @@ export class Api {
         authorization: this._userID,
       },
     }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
+      return this._getResponseData(response);
     });
   }
 
@@ -129,11 +106,7 @@ export class Api {
         avatar: link,
       }),
     }).then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        return Promise.reject(`Ошибка: ${response.status}`);
-      }
+      return this._getResponseData(response);
     });
   }
 }

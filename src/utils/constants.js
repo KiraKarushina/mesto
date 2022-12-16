@@ -2,23 +2,7 @@
 export const profileEditButton = document.querySelector(".profile__info-edit");
 export const buttonAddCard = document.querySelector("#addCardButton");
 export const buttonAvatar = document.querySelector("#profileImageId");
-
-//Profile Popup
-export const profilePopup = document.querySelector("#profile");
-export const nameInputElement = profilePopup.querySelector(
-  ".popup__input_type_author"
-);
-export const jobInputElement = profilePopup.querySelector(
-  ".popup__input_type_job"
-);
-
-// //Profile Selector
-export const profileInfoName = document.querySelector(".profile__info-name");
-export const profileInfoJob = document.querySelector(".profile__info-job");
-
-//Picture Popup
-export const picturePopup = document.querySelector("#previewPopup");
-export const confirmDeletePicture = document.querySelector("#confirmPopup");
+export const previewPictureAvatar = document.querySelector("#imageCoverId");
 
 // картинки для webpack
 export const altay = new URL("../images/altay.jpg", import.meta.url);
@@ -39,7 +23,7 @@ export const uralskiegori = new URL(
 
 //Объект с названиями селекторов необходимых для валидации
 
-export const selectors = {
+export const validationConfig = {
   formSelector: ".form",
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__submit",
