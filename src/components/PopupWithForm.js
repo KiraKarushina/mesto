@@ -33,7 +33,7 @@ export default class PopupWithForm extends Popup {
     });
   }
 
-  changeSubmitButton(text) {
+  changeSubmitButtonText(text) {
     this._submitButton.textContent = text;
   }
 

@@ -26,14 +26,14 @@ const api = new Api({
 
 // Все cards здесь
 
-let serverCards;
+let cardsSection;
 let currentCardForDelete;
 let userInfo;
 
 // экземпляр с попапом формы юзера
 
 const popupWithProfileForm = new PopupWithForm("#profile", (data, popup) => {
-  popupWithProfileForm.changeSubmitButton("Сохранение...");
+  popupWithProfileForm.changeSubmitButtonText("Сохранение...");
   api
     .updateProfile(data._name, data._job)
     .then((res) => {
@@ -45,49 +45,43 @@ const popupWithProfileForm = new PopupWithForm("#profile", (data, popup) => {
       console.log(err);
     })
     .finally(() => {
-      popupWithProfileForm.changeSubmitButton("Сохранить");
+      popupWithProfileForm.changeSubmitButtonText("Сохранить");
     });
 });
 
 //экземпляр с попапом обновления аватара
 const popupUpdatePicture = new PopupWithForm("#updateAvatarPopup", (data) => {
-  popupUpdatePicture.changeSubmitButton("Сохранение...");
+  popupUpdatePicture.changeSubmitButtonText("Сохранение...");
   api
     .updateAvatar(data.link)
     .then((res) => {
-      buttonAvatar.src = res.avatar;
+      userInfo.updateAvatar(res.avatar);
       popupUpdatePicture.close();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
-      popupUpdatePicture.changeSubmitButton("Сохранить");
+      popupUpdatePicture.changeSubmitButtonText("Сохранить");
     });
 });
 
 // экземпляр с попапом формы карты
 
 const popupWithCardForm = new PopupWithForm("#addCardPopup", (data) => {
-  popupWithCardForm.changeSubmitButton("Создание...");
+  popupWithCardForm.changeSubmitButtonText("Создание...");
   api
     .addCard(data.name, data.link)
     .then((res) => {
-      const card = createCard({
-        name: res.name,
-        link: res.link,
-        likes: res.likes,
-        owner: res.owner,
-        _id: res._id,
-      });
-      serverCards.addItemUp(card);
+      const card = createCard(res);
+      cardsSection.addItemUp(card);
       popupWithCardForm.close();
     })
     .catch((err) => {
       console.log(err);
     })
     .finally(() => {
-      popupWithCardForm.changeSubmitButton("Создать");
+      popupWithCardForm.changeSubmitButtonText("Создать");
     });
 });
 
@@ -203,22 +197,22 @@ Promise.all([api.getProfile(), api.getCards()])
     userInfo = new UserInfo(
       res[0],
       ".profile__info-name",
-      ".profile__info-job"
+      ".profile__info-job",
+      "#profileImageId"
     );
     userInfo.fillProfileOnPage();
-    userInfo.updateAvatar();
-
-    serverCards = new Section(
+    userInfo.updateAvatar(res[0].avatar);
+    cardsSection = new Section(
       {
         data: res[1],
         renderer: (card) => {
           const cardElement = createCard(card);
-          serverCards.addItem(cardElement);
+          cardsSection.addItem(cardElement);
         },
       },
       "#cards"
     );
-    serverCards.renderItems();
+    cardsSection.renderItems();
   })
   .catch((err) => {
     console.log(err);

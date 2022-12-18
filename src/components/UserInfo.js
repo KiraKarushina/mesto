@@ -2,7 +2,8 @@ export default class UserInfo {
   constructor(
     { name, about, _id, avatar },
     profileNameSelector,
-    profileJobSelector
+    profileJobSelector,
+    profileAvatarSelector
   ) {
     this._name = name;
     this._job = about;
@@ -10,19 +11,21 @@ export default class UserInfo {
     this._avatar = avatar;
     this._profileInfoName = document.querySelector(profileNameSelector);
     this._profileInfoJob = document.querySelector(profileJobSelector);
-    this._avatarButton = document.querySelector("#profileImageId");
+    this._avatarButton = document.querySelector(profileAvatarSelector);
   }
 
   getUserInfo() {
     return {
       name: this._name,
       job: this._job,
+      avatar: this._avatar,
     };
   }
 
   setUserInfo(name, job) {
     this._name = name;
     this._job = job;
+    this.fillProfileOnPage();
   }
 
   getID() {
@@ -34,7 +37,7 @@ export default class UserInfo {
     this._profileInfoJob.textContent = this._job;
   }
 
-  updateAvatar() {
-    this._avatarButton.src = this._avatar;
+  updateAvatar(avatar) {
+    this._avatarButton.src = avatar;
   }
 }

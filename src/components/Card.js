@@ -43,7 +43,7 @@ export default class Card {
   }
 
   _setLikeState() {
-    if (this._likes.some((el) => el._id === this._userID)) {
+    if (this.isLiked()) {
       this._likeElement.classList.add("elements__like_active");
     } else {
       this._likeElement.classList.remove("elements__like_active");
